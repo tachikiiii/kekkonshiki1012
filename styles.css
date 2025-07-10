@@ -18,6 +18,12 @@ header {
   text-align: center;
 }
 
+header img {
+  display: block;
+  margin: 0 auto;
+}
+
+
 .container {
   max-width: 800px;
   margin: 0 auto;
