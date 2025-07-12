@@ -61,6 +61,12 @@ footer {
   z-index: 999;
 }
 
+/* メニューアイコンのアニメーション用のクラス */
+.spin {
+  transition: transform 0.7s cubic-bezier(0.4,2,0.6,1);
+  transform: rotate(360deg);
+}
+
 .nav-menu {
   padding: 80px 30px;
   position: fixed;
@@ -69,6 +75,8 @@ footer {
   display: none; /* 最初は非表示 */
   flex-direction: column;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;          /* 文字を左揃え */
+  align-items: flex-start;   /* Flexアイテム（aタグ等）も左寄せ */
 }
 
 .nav-menu a {
