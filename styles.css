@@ -13,8 +13,9 @@ body {
   font-size: 24px;
 }
 
-/* header {
-  padding: 16px 0;
+header {
+  padding: 0;
+  margin-top: 64px;
   text-align: center;
 }
 
