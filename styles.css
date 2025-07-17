@@ -10,7 +10,7 @@ body {
   background: #f6f5ea;
   text-align: center;
   color: #545454;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 header {
@@ -22,8 +22,7 @@ header {
 header img {
   display: block;
   margin: 0 auto;
-} */
-
+}
 
 .container {
   max-width: 800px;
@@ -32,20 +31,21 @@ header img {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
+h1, h2 {
   margin: 0;
 }
 
 section {
   padding: 60px 20px;
   margin: 0;
+  text-align: left;
 }
+
 footer {
   text-align: center;
   padding: 40px 20px;
   font-size: 0.9em;
-  color: #555;
+  color: #545454;
 }
 
 #date {
@@ -53,6 +53,7 @@ footer {
   margin-bottom: 100px;
 }
 
+/* ---- ハンバーガーメニュー ---- */
 .hamburger {
   position: fixed;
   top: 20px;
@@ -62,7 +63,6 @@ footer {
   z-index: 999;
 }
 
-/* メニューアイコンのアニメーション用のクラス */
 .spin {
   transition: transform 0.7s cubic-bezier(0.4,2,0.6,1);
   transform: rotate(360deg);
@@ -73,11 +73,10 @@ footer {
   position: fixed;
   right: 0;
   background: #eb9392;
-  display: none; /* 最初は非表示 */
+  display: none;
   flex-direction: column;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;          /* 文字を左揃え */
-  align-items: flex-start;   /* Flexアイテム（aタグ等）も左寄せ */
+  text-align: left;
+  align-items: flex-start;
 }
 
 .nav-menu a {
@@ -89,18 +88,17 @@ footer {
   cursor: pointer;
 }
 
-.nav-menu a:hover {
-}
-
 .bi {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-right: 4px;
 }
 
 .curved-sidebar {
   position: fixed;
   right: 0;
   top: 0;
-  width: 180px; /* 好きな幅 */
+  width: 180px;
   height: 100%;
   background: #eb9392;
   opacity: 0.9;
@@ -108,15 +106,234 @@ footer {
   clip-path: ellipse(70% 70% at 100% 50%);
 }
 
-.bi {
-  font-size: 1.2rem;
-  vertical-align: middle;
-  margin-right: 4px;
+/* ---- メインビジュアル2カラム ---- */
+#main-visual {
+  padding: 64px 0 32px 0;
 }
 
+.main-flex {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 0;
+  overflow: hidden;
+  padding: 16px;
+}
 
-/* features */
+.main-left {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 2vw 0 0;
+}
 
+.main-left img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+}
+
+#main-right {
+  flex: 2 1 0;
+  min-width: 0;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 4vw;
+  gap: 24px;
+}
+
+.main-right {
+  flex: 2 1 0;
+  min-width: 0;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 4vw;
+  gap: 24px;
+  margin-left: 4vw;
+}
+
+.main-right img {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  margin: 0;
+  display: block;
+}
+
+.main-right h2 {
+  font-size: 1.6em;
+  margin: 0 0 8px 0;
+  color: #c8736f;
+  font-family: "Shippori Mincho", serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.main-right p {
+  font-size: 1em;
+  margin: 0;
+  color: #6b4c49;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* ---- モコモコ雲ブロック ---- */
+.cloud-block {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.cloud-top,
+.cloud-bottom {
+  width: 100vw;
+  max-width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.cloud-bottom {
+  transform: scaleY(-1);
+}
+
+.cloud-content {
+  background: #eb9392;
+  padding: 48px 0 44px 0;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+/* ---- 2セクションテキスト用 ---- */
+.intro-text {
+  margin-bottom: 32px;
+  font-size: 1.07em;
+  color: #fff;
+}
+
+.main-message {
+  margin-top: 16px;
+  font-size: 1.15em;
+  color: #fff;
+  /* アニメーションでふわっと */
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 1.2s cubic-bezier(0.4, 0.7, 0.4, 1), transform 1.1s cubic-bezier(0.4, 0.7, 0.4, 1);
+}
+
+.main-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- 他セクション ---- */
+#greeting {
+  background: transparent;
+  margin: 0;
+}
+#greeting h2 {
+  margin: 0;
+}
+
+.main-right section {
+  font-size: 1em;
+  margin: 0 16px 0 0;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* レスポンシブ：900px以下で画像やや小さく */
+@media (max-width: 900px) {
+  .main-flex {
+    max-width: 98vw;
+  }
+  .main-left img,
+  .main-right img {
+    max-width: 260px;
+  }
+}
+
+/* スマホ：縦並び・幅広く */
+@media (max-width: 700px) {
+  #main-visual {
+    padding: 24px 0 12px 0;
+  }
+  .main-flex {
+    flex-direction: column;
+    max-width: 99vw;
+    box-shadow: none;
+  }
+  .main-left,
+  .main-right {
+    max-width: 100%;
+    padding: 0;
+    align-items: center;
+    background: transparent;
+  }
+  .main-left {
+    justify-content: center;
+    padding: 0;
+  }
+  .main-left img,
+  .main-right img {
+    width: 96vw;
+    max-width: 390px;
+    margin: 16px auto 8px auto;
+  }
+  .main-right {
+    align-items: center;
+    gap: 14px;
+    padding: 0 0 20px 0;
+  }
+  .main-right h2 {
+    font-size: 1.2em;
+    margin-top: 12px;
+  }
+  .main-right p {
+    font-size: 0.95em;
+  }
+
+  .cloud-content {
+    padding: 24px 0 18px 0;
+    font-size: 1em;
+  }
+  .cloud-top,
+  .cloud-bottom {
+    width: 100vw;
+    max-width: 100%;
+  }
+  .intro-text {
+    margin-bottom: 20px;
+    font-size: 0.98em;
+  }
+  .main-message {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+}
+
+/* ---- featuresや他のパート ---- */
 .features {
   padding: 64px 0;
 }
@@ -137,49 +354,17 @@ footer {
   text-align: center;
 }
 
-@media(min-width: 600px) {
-
-  /* header */
-
-  .logo-sp {
-    display: none;
-  }
-
-  .logo-pc {
-    display: inline;
-  }
-
-  /* hero */
-
-  .hero .container {
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-1,
-  .hero-2 {
-    flex: 1;
-  }
-
-  .hero img {
-    margin-top: 0;
-  }
-
-  /* features */
-
+@media (min-width: 600px) {
   .feature {
     display: flex;
     gap: 32px;
   }
-
   .image {
     width: 300px;
   }
-
   .desc {
     flex: 1;
   }
-
   .reversed {
     flex-direction: row-reverse;
   }

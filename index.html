@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web招待状</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Shippori+Mincho&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Shippori+Mincho&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
+<body>
   <!-- ハンバーガーアイコン -->
   <div class="hamburger" id="hamburger-btn">
     <img src="menu.png" width="60" height="60" alt="menu" id="menu-icon" />
@@ -31,22 +33,57 @@
     <a href="#rsvp"><i class="bi bi-envelope"></i> 出欠</a>
   </nav>
 
-  <!-- トップ -->
-  <header class="container" id="top">
+  <!-- <header class="container" id="top">
     <img src="aaa.png" width="300" height="500" alt="top" />
     <p id="date">2025 / 10 / 12 （日）</p>
-  </header>
+  </header> -->
 
-  <!-- ご挨拶 -->
-  <section id="greeting">
-    <h2><i class="bi bi-heart"></i> ご挨拶</h2>
-    <p>この度、私たちは結婚する運びとなりました。<br>
-      皆さまにご報告とご案内を申し上げます。</p>
+  <!-- メインビジュアル（2カラム構成） -->
+  <section id="main-visual">
+    <div class="main-flex">
+      <!-- 左：画像1 -->
+      <div class="main-left" id="main-left">
+        <img src="aaa.png" alt="左の画像" />
+        <p>2025.10.12</p>
+      </div>
+      <!-- 右：画像2＋テキスト -->
+      <div class="main-right" id="main-right">
+        <img src="main.png" alt="右の画像" />
+      </div>
+    </div>
   </section>
+
+  <!-- ご挨拶：モコモコ雲で挟む -->
+  <div class="cloud-block">
+    <img src="mokomoko.png" class="cloud-top" alt="もこもこ雲" />
+    <div class="cloud-content">
+      <div class="intro-text">
+        <!-- 1つ目のテキスト -->
+        <p>
+          もし晴れたら、風が気持ちいいガーデンで、<br>
+          みんなとわいわい過ごす一日を想像しています。<br>
+          ドレスコードも、フォーマルも、ちょっぴり緩く。<br>
+          お花や緑、手作りの飾りたちと、<br>
+          ふたりらしい、肩ひじ張らない結婚式にしたいなあと思いました。
+        </p>
+      </div>
+      <div class="main-message fadein-text">
+        <!-- 2つ目のテキスト（後からふわっと表示）-->
+        <p>
+          大切な人たちと一緒に、<br>
+          ゆっくり深呼吸できるような一日になりますように。<br>
+          ぜひ、私たちと特別な時間を<br>
+          わいわい、のんびり過ごしてください！
+        </p>
+      </div>
+    </div>
+    <img src="mokomoko.png" class="cloud-bottom" alt="もこもこ雲" />
+  </div>
+
 
   <!-- 私たち -->
   <section id="us">
-    <h2><i class="bi bi-person"></i> 私たち</h2>
+    <h2>私たち</h2>
     <ul>
       <li>繁戸 一輝（しげと かずき）</li>
       <li>立木 仁実（たちき ひとみ）</li>
@@ -55,7 +92,7 @@
 
   <!-- みんな -->
   <section id="guests">
-    <h2><i class="bi bi-people"></i> みんな</h2>
+    <h2>みんな</h2>
     <p>大切なゲストのみなさまをご紹介します。</p>
     <!-- ここにリストや写真を入れてもOK！ -->
     <a href="">aaa</a>
@@ -63,13 +100,13 @@
 
   <!-- タイムスケジュール -->
   <section id="schedule">
-    <h2><i class="bi bi-calendar-event"></i> タイムスケジュール</h2>
-    <img src="time.png" width="500"/>
-    </section>
+    <h2>時間</h2>
+    <img src="time.png" width="500" />
+  </section>
 
   <!-- 式場 -->
   <section id="venue">
-    <h2><i class="bi bi-geo-alt"></i> 式場（アンジェラ）</h2>
+    <h2>式場（アンジェラ）</h2>
     <p>
       ホテルブレストンコート アンジェラ<br>
       〒000-0000 東京都〇〇区〇〇1-2-3<br>
@@ -80,7 +117,7 @@
 
   <!-- 持ち物 -->
   <section id="belongings">
-    <h2><i class="bi bi-bag"></i> 持ち物</h2>
+    <h2>持ち物</h2>
     <ul>
       <li>セミフォーマルな服装</li>
       <li>受付用招待状</li>
@@ -91,32 +128,28 @@
 
   <!-- ご祝儀 -->
   <section id="money">
-    <h2><i class="bi bi-cash"></i> ご祝儀</h2>
+    <h2>ご祝儀</h2>
     <p>ご祝儀は当日ご持参いただくか、指定口座へのお振込みも可能です。</p>
   </section>
 
   <!-- Q&A -->
   <section id="qa">
-    <h2><i class="bi bi-question-circle"></i> Q&A</h2>
+    <h2>Q&A</h2>
     <p>子ども連れでも大丈夫ですか？<br>→ もちろん大歓迎です！</p>
     <!-- 他にもQ&Aを追加可能 -->
   </section>
 
   <!-- 写真共有 -->
   <section id="photo">
-    <h2><i class="bi bi-camera"></i> 写真共有</h2>
+    <h2>写真共有</h2>
     <a href="#">Google Photo</a>
   </section>
 
   <!-- 出欠フォーム -->
   <section id="rsvp">
-    <h2><i class="bi bi-envelope"></i> 出欠フォーム</h2>
+    <h2>出欠フォーム</h2>
     <p>以下のフォームからご回答ください。</p>
-    <iframe
-      src="https://docs.google.com/forms/..."
-      width="100%"
-      height="500"
-    ></iframe>
+    <iframe src="https://docs.google.com/forms/..." width="100%" height="500"></iframe>
   </section>
 
   <footer>
@@ -125,4 +158,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

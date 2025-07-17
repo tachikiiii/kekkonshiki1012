@@ -44,3 +44,11 @@ image.addEventListener("click", function () {
     image.classList.add("spin");
   }, 10);
 });
+
+// JavaScript（ページを開いて1.5秒後に2つ目テキストをふわっと表示）
+window.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    document.querySelector('.fadein-text').classList.add('visible');
+  }, 1500);
+});
+
