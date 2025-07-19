@@ -283,8 +283,9 @@ footer {
   color: #8A9A5B;
 }
 .tab.active {
-  color: #8A9A5B;
+  color: #fff;
   border-bottom: 3px solid #8A9A5B;
+  background: #8A9A5B;
 }
 .communities .community {
   display: none;
@@ -342,7 +343,7 @@ footer {
   right: 0;
 }
 
-// タイムスケジュール
+/* タイムスケジュール */
 .schedule-row {
   display: flex;
   justify-content: center;
