@@ -163,7 +163,6 @@ footer {
   padding: 32px 4vw;
   gap: 24px;
   margin-left: 4vw;
-  background: yellow
 }
 
 .main-right img {
@@ -408,6 +407,8 @@ footer {
   }
   .main-right {
     align-items: center;
+    padding: 0;
+    margin: 0;
   }
   .cloud-content {
     padding: 24px 0 18px 0;
