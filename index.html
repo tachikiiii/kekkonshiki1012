@@ -43,7 +43,7 @@
     <div class="main-flex">
       <!-- 左：画像1 -->
       <div class="main-left" id="main-left">
-        <img src="aaa.png" alt="左の画像" />
+        <img src="aaa.png" alt="左の画像" width="500" height="1000" />
         <p>2025.10.12</p>
       </div>
       <!-- 右：画像2＋テキスト -->
@@ -94,9 +94,217 @@
   <section id="guests">
     <h2>みんな</h2>
     <p>大切なゲストのみなさまをご紹介します。</p>
-    <!-- ここにリストや写真を入れてもOK！ -->
-    <a href="">aaa</a>
+
+    <!-- タブメニュー -->
+    <nav class="tabs">
+      <button class="tab active" data-group="yakult">ヤクルトファン</button>
+      <button class="tab" data-group="university">大学</button>
+      <button class="tab" data-group="prep">予備校</button>
+      <button class="tab" data-group="highschool">高校</button>
+      <button class="tab" data-group="drinking">飲み友？</button>
+      <button class="tab" data-group="work">元職場</button>
+      <button class="tab" data-group="family">親族</button>
+    </nav>
+
+    <div class="communities">
+      <!-- ヤクルトファン -->
+      <div class="community active" data-group="yakult">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>なおぴ</h3>
+              <p>大学時代からの大親友。</p>
+            </div>
+            <div class="card">
+              <h3>わたるん</h3>
+              <p>応援団長。</p>
+            </div>
+            <div class="card">
+              <h3>なみちゃん</h3>
+              <p>いつも盛り上げ役！</p>
+            </div>
+            <div class="card">
+              <h3>ゆりちゃん</h3>
+              <p>ムードメーカー。</p>
+            </div>
+            <div class="card">
+              <h3>ごきよ</h3>
+              <p>場を盛り上げるムードメーカー。</p>
+            </div>
+            <div class="card">
+              <h3>ゆうた</h3>
+              <p>応援熱心！</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+      <!-- 大学 -->
+      <div class="community" data-group="university">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>まな</h3>
+              <p>サークル仲間。</p>
+            </div>
+            <div class="card">
+              <h3>ちゅうこちゃん</h3>
+              <p>ゼミの同期。</p>
+            </div>
+            <div class="card">
+              <h3>あきよし</h3>
+              <p>研究室のお友達。</p>
+            </div>
+            <div class="card">
+              <h3>まつも</h3>
+              <p>キャンパスの先輩。</p>
+            </div>
+            <div class="card">
+              <h3>まや</h3>
+              <p>学園祭仲間。</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+      <!-- 予備校 -->
+      <div class="community" data-group="prep">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>やの</h3>
+              <p>塾の同級生。</p>
+            </div>
+            <div class="card">
+              <h3>まりな</h3>
+              <p>共に励まし合った仲。</p>
+            </div>
+            <div class="card">
+              <h3>よしば</h3>
+              <p>勉強仲間。</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+      <!-- 高校 -->
+      <div class="community" data-group="highschool">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>かずほ</h3>
+              <p>高校からの親友。</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+      <!-- 飲み友 -->
+      <div class="community" data-group="drinking">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>和泉</h3>
+              <p>飲み友。</p>
+            </div>
+            <div class="card">
+              <h3>もえぎ</h3>
+              <p>愉快な飲み仲間。</p>
+            </div>
+            <div class="card">
+              <h3>石ちゃん</h3>
+              <p>盛り上げ上手。</p>
+            </div>
+            <div class="card">
+              <h3>さきちゃん</h3>
+              <p>笑顔の伝道師。</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+      <!-- 元職場 -->
+      <div class="community" data-group="work">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>大瀧さん</h3>
+              <p>元お花屋同僚。</p>
+            </div>
+            <div class="card">
+              <h3>にしやん</h3>
+              <p>店長サポーター。</p>
+            </div>
+            <div class="card">
+              <h3>かずみさん</h3>
+              <p>共に働いた仲間。</p>
+            </div>
+            <div class="card">
+              <h3>カブちゃん</h3>
+              <p>チームの太陽。</p>
+            </div>
+            <div class="card">
+              <h3>岡安さん</h3>
+              <p>花を愛する先輩。</p>
+            </div>
+            <div class="card">
+              <h3>はるねちゃん</h3>
+              <p>いつも元気。</p>
+            </div>
+            <div class="card">
+              <h3>ゆうまくん</h3>
+              <p>一緒に頑張った仲間。</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+      <!-- 親族 -->
+      <div class="community" data-group="family">
+        <div class="scroll-wrapper">
+          <button class="scroll-btn left" aria-label="前へ">‹</button>
+          <div class="card-container">
+            <div class="card">
+              <h3>パパ</h3>
+              <p>いつも見守ってくれる。</p>
+            </div>
+            <div class="card">
+              <h3>ママ</h3>
+              <p>最高のサポーター。</p>
+            </div>
+            <div class="card">
+              <h3>おねえちゃん</h3>
+              <p>人生の先輩。</p>
+            </div>
+            <div class="card">
+              <h3>シンジさん</h3>
+              <p>頼れる兄。</p>
+            </div>
+            <div class="card">
+              <h3>コウエンさん</h3>
+              <p>心の支え。</p>
+            </div>
+            <div class="card">
+              <h3>スンイお姉さん</h3>
+              <p>優しい姉。</p>
+            </div>
+            <div class="card">
+              <h3>たいきくん</h3>
+              <p>可愛い甥っ子。</p>
+            </div>
+          </div>
+          <button class="scroll-btn right" aria-label="次へ">›</button>
+        </div>
+      </div>
+    </div>
   </section>
+
 
   <!-- タイムスケジュール -->
   <section id="schedule">
