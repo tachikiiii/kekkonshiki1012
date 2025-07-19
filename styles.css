@@ -163,6 +163,7 @@ footer {
   padding: 32px 4vw;
   gap: 24px;
   margin-left: 4vw;
+  background: yellow
 }
 
 .main-right img {
@@ -272,20 +273,18 @@ footer {
 .tab {
   flex: 0 0 auto;
   padding: 8px 16px;
-  background: none;
-  border: none;
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.2s;
   white-space: nowrap;
+  color: #fff;
+  background: #8A9A5B;
 }
 .tab:not(.active):hover {
-  color: #8A9A5B;
+  color: pink;
 }
-.tab.active {
-  color: #fff;
-  border-bottom: 3px solid #8A9A5B;
-  background: #8A9A5B;
+.tab:not(.active) {
+  border: #545454;
 }
 .communities .community {
   display: none;
@@ -409,15 +408,6 @@ footer {
   }
   .main-right {
     align-items: center;
-    gap: 14px;
-    padding: 0 0 20px 0;
-  }
-  .main-right h2 {
-    font-size: 1.2em;
-    margin-top: 12px;
-  }
-  .main-right p {
-    font-size: 0.95em;
   }
   .cloud-content {
     padding: 24px 0 18px 0;
