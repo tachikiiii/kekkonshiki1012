@@ -342,6 +342,34 @@ footer {
   right: 0;
 }
 
+// タイムスケジュール
+.schedule-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+.hop-img {
+  width: 22vw;         /* 画面幅に応じてリサイズ */
+  max-width: 105px;
+  min-width: 64px;
+  height: auto;
+  /* 段差。順に30pxずつ下げる */
+  transform: translateY(calc(var(--i) * 30px));
+  opacity: 0;
+  animation: hopin 0.7s cubic-bezier(.2,1.5,.4,1) forwards;
+  animation-delay: calc(var(--i) * 0.33s);
+}
+@keyframes hopin {
+  0%   { opacity: 0; transform: translateY(calc(60px + var(--i) * 30px)) scale(0.7);}
+  65%  { opacity: 1; transform: translateY(calc(-30px + var(--i) * 30px)) scale(1.1);}
+  85%  { transform: translateY(calc(10px + var(--i) * 30px)) scale(0.98);}
+  100% { opacity: 1; transform: translateY(calc(var(--i) * 30px)) scale(1);}
+}
+
+
 /* ---- レスポンシブ ---- */
 @media (max-width: 900px) {
   .main-flex {
