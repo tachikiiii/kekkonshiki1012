@@ -430,20 +430,20 @@ footer {
 }
 
 @media (max-width: 700px) {
-  #main-visual {
+#main-visual {
     padding: 24px 0 12px 0;
   }
-
   .main-flex {
     flex-direction: column;
     align-items: center;
-    max-width: 99vw;
+    max-width: 100vw;   /* ←幅を制限 */
+    padding: 0;         /* ←余白リセット */
+    gap: 0;             /* ←余白リセット */
     box-shadow: none;
   }
-
   .main-left,
   .main-right {
-    width: 100%;
+    width: 100vw;            /* ←全幅（padding無し）*/
     max-width: 100vw;
     align-items: center !important;
     justify-content: center !important;
@@ -453,15 +453,14 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
   .main-left img,
   .main-right img {
-    width: 96vw;
+    width: 100%;           /* ←親要素幅に完全フィット */
     max-width: 390px;
     min-width: 0;
     margin: 16px auto 8px auto;
     display: block;
-  }
+    box-sizing: border-box;
 
   .cloud-content {
     padding: 24px 0 18px 0;
