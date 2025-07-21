@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ゲスト横スクロール
   document.querySelectorAll('.community').forEach(section => {
     const container = section.querySelector('.card-container');
-    const btnLeft  = section.querySelector('.scroll-btn.left');
+    const btnLeft = section.querySelector('.scroll-btn.left');
     const btnRight = section.querySelector('.scroll-btn.right');
     const scrollAmount = 216;
     if (btnLeft && container) {
@@ -76,12 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // main-message/fadein-text (ご挨拶のふわっと)
   document.querySelectorAll('.main-message, .fadein-text').forEach(el => {
     el.classList.remove('visible'); // 最初は非表示
+
     const observer = new window.IntersectionObserver(
-      (entries, obs) => {
+      (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
+            // ★見えたらクラス付与→アニメーション
+            el.classList.remove('visible');
+            // クラスを一旦外して即再付与で毎回アニメをリセット
+            void el.offsetWidth; // reflow
+            el.classList.add('visible');
+          } else {
+            // ★画面外に出たら消す（次回再びアニメ発火のため）
+            el.classList.remove('visible');
           }
         });
       },
@@ -90,26 +97,63 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
+
   // schedule-row（タイムスケジュール画像アニメ）
   document.querySelectorAll('.schedule-row').forEach(row => {
-    // 最初は止めておく
-    row.querySelectorAll('.hop-img').forEach(img => {
-      img.style.animationPlayState = 'paused';
-    });
-    const observer = new window.IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.hop-img').forEach(img => {
-              img.style.animationPlayState = 'running';
-            });
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.35 }
-    );
-    observer.observe(row);
-  });
+  const imgs = row.querySelectorAll('.hop-img');
+  // 一度だけじゃなく毎回コントロール
+  const observer = new window.IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          imgs.forEach(img => {
+            img.classList.remove('animated');
+            void img.offsetWidth;
+            img.classList.add('animated');
+          });
+        } else {
+          imgs.forEach(img => {
+            img.classList.remove('animated');
+          });
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+  observer.observe(row);
+});
+
+
+
 
 });
+
+// 自己紹介データ
+const profiles = {
+  shigeto: `
+    <h3>繁戸 一輝（しげと かずき）</h3>
+    <p>1993/10/8 生まれ<br>神戸出身　ESTJ</p>
+    <p><b>「繁戸」</b><br>全国順位　32,108位<br>全国人数　約90人（珍！）</p>
+  `,
+  tachiki: `
+    <h3>立木 仁実（たちき ひとみ）</h3>
+    <p>1994/11/8 生まれ<br>千葉出身　ENFP</p>
+    <p><b>「立木」</b><br>全国順位　2,554位<br>全国人数　約5,400人</p>
+    <p>→91人目の繁戸へ</p>
+  `
+};
+
+document.getElementById('shigeto').onclick = () => showModal('shigeto');
+document.getElementById('tachiki').onclick = () => showModal('tachiki');
+document.getElementById('closeBtn').onclick = closeModal;
+document.getElementById('modal').onclick = (e) => {
+  if (e.target.id === 'modal') closeModal();
+};
+
+function showModal(key) {
+  document.getElementById('modalText').innerHTML = profiles[key];
+  document.getElementById('modal').style.display = 'flex';
+}
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
