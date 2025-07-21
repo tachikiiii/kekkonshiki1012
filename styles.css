@@ -121,7 +121,7 @@ footer {
   margin: 0 auto;
   gap: 0;
   overflow: hidden;
-  padding: 16px;
+  padding: 8px;
 }
 
 .main-left {
@@ -151,20 +151,17 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 32px 4vw;
-  gap: 24px;
 }
 
 .main-right {
-  flex: 2 1 0;
+  /* flex: 2 1 0; */
   min-width: 0;
   max-width: 80%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   justify-content: center;
-  align-items: flex-start;
-  padding: 32px 4vw;
-  gap: 24px;
-  margin-left: 4vw;
+  align-items: center;
+  padding: 32px 0;
 }
 
 .main-right img {
