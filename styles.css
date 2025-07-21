@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -31,7 +32,8 @@ header img {
   box-sizing: border-box;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -64,7 +66,7 @@ footer {
 }
 
 .spin {
-  transition: transform 0.7s cubic-bezier(0.4,2,0.6,1);
+  transition: transform 0.7s cubic-bezier(0.4, 2, 0.6, 1);
   transform: rotate(360deg);
 }
 
@@ -251,6 +253,7 @@ footer {
   background: transparent;
   margin: 0;
 }
+
 #greeting h2 {
   margin: 0;
 }
@@ -265,37 +268,55 @@ footer {
 /* ---- ゲスト紹介・タブ切り替え ---- */
 .tabs {
   display: flex;
-  overflow-x: auto;
-  border-bottom: 2px solid #ccc;
+  flex-wrap: wrap;           /* 折り返し許可 */
+  gap: 8px 8px;
   margin-bottom: 16px;
+  justify-content: center;
 }
+
 .tab {
-  flex: 0 0 auto;
-  padding: 8px 16px;
+  padding: 10px 20px;        /* 左右余白でラベルに応じた幅 */
   font-size: 1rem;
   cursor: pointer;
-  transition: color 0.2s;
-  white-space: nowrap;
   color: #fff;
   background: #8A9A5B;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 1px 2px #0001;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;       /* 改行させない */
+  min-width: 90px;           /* 最小幅お好みで */
+  max-width: 100%;           /* 親幅超えないように */
 }
+
+.tab.active {
+  background: #eb9392;
+  color: #8A9A5B;
+  font-weight: bold;
+}
+
 .tab:not(.active):hover {
   color: pink;
 }
+
 .tab:not(.active) {
   border: #545454;
 }
+
 .communities .community {
   display: none;
 }
+
 .communities .community.active {
   display: block;
 }
+
 .scroll-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .card-container {
   display: flex;
   overflow-x: auto;
@@ -303,6 +324,7 @@ footer {
   -webkit-overflow-scrolling: touch;
   padding: 8px 0;
 }
+
 .card {
   flex: 0 0 auto;
   width: 200px;
@@ -312,10 +334,12 @@ footer {
   background: #fff;
   scroll-snap-align: start;
 }
+
 .card h3 {
   border-bottom: 1px solid #545454;
   padding-bottom: 4px;
 }
+
 .card:last-child {
   margin-right: 0;
 }
@@ -334,9 +358,11 @@ footer {
   cursor: pointer;
   z-index: 1;
 }
+
 .scroll-btn.left {
   left: 0;
 }
+
 .scroll-btn.right {
   right: 0;
 }
@@ -350,22 +376,39 @@ footer {
   margin-top: 36px;
   margin-bottom: 36px;
 }
+
 .hop-img {
-  width: 22vw;         /* 画面幅に応じてリサイズ */
+  width: 22vw;
+  /* 画面幅に応じてリサイズ */
   max-width: 105px;
   min-width: 64px;
   height: auto;
   /* 段差。順に30pxずつ下げる */
   transform: translateY(calc(var(--i) * 30px));
   opacity: 0;
-  animation: hopin 0.7s cubic-bezier(.2,1.5,.4,1) forwards;
+  animation: hopin 0.7s cubic-bezier(.2, 1.5, .4, 1) forwards;
   animation-delay: calc(var(--i) * 0.33s);
 }
+
 @keyframes hopin {
-  0%   { opacity: 0; transform: translateY(calc(60px + var(--i) * 30px)) scale(0.7);}
-  65%  { opacity: 1; transform: translateY(calc(-30px + var(--i) * 30px)) scale(1.1);}
-  85%  { transform: translateY(calc(10px + var(--i) * 30px)) scale(0.98);}
-  100% { opacity: 1; transform: translateY(calc(var(--i) * 30px)) scale(1);}
+  0% {
+    opacity: 0;
+    transform: translateY(calc(60px + var(--i) * 30px)) scale(0.7);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(calc(-30px + var(--i) * 30px)) scale(1.1);
+  }
+
+  85% {
+    transform: translateY(calc(10px + var(--i) * 30px)) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(calc(var(--i) * 30px)) scale(1);
+  }
 }
 
 
@@ -374,20 +417,24 @@ footer {
   .main-flex {
     max-width: 98vw;
   }
+
   .main-left img,
   .main-right img {
     max-width: 260px;
   }
 }
+
 @media (max-width: 700px) {
   #main-visual {
     padding: 24px 0 12px 0;
   }
+
   .main-flex {
     flex-direction: column;
     max-width: 99vw;
     box-shadow: none;
   }
+
   .main-left,
   .main-right {
     max-width: 100%;
@@ -395,56 +442,69 @@ footer {
     align-items: center;
     background: transparent;
   }
+
   .main-left {
     justify-content: center;
     padding: 0;
   }
+
   .main-left img,
   .main-right img {
     width: 96vw;
     max-width: 390px;
     margin: 16px auto 8px auto;
   }
+
   .main-right {
     align-items: center;
     padding: 0;
     margin: 0;
   }
+
   .cloud-content {
     padding: 24px 0 18px 0;
     font-size: 1em;
   }
+
   .cloud-top,
   .cloud-bottom {
     width: 100vw;
     max-width: 100%;
   }
+
   .intro-text {
     margin-bottom: 20px;
     font-size: 0.98em;
   }
+
   .main-message {
     font-size: 1em;
     margin-top: 10px;
   }
+
   .scroll-btn {
     display: none;
   }
 }
+
 @media (min-width: 600px) {
   .feature {
     display: flex;
     gap: 32px;
   }
+
   .image {
     width: 300px;
   }
+
   .desc {
     flex: 1;
   }
+
   .reversed {
     flex-direction: row-reverse;
   }
+
   .scroll-btn {
     display: none;
   }
