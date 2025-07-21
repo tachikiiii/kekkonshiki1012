@@ -431,6 +431,10 @@ footer {
 }
 
 @media (max-width: 700px) {
+  section {
+    padding: 30px 0;
+  }
+
   #main-visual {
     padding: 24px 0 12px 0;
   }
@@ -494,9 +498,6 @@ footer {
 
     .scroll-btn {
       display: none;
-    }
-    section {
-      padding: 30px 0;
     }
   }
 
