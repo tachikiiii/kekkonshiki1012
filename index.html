@@ -16,7 +16,11 @@
 <body>
   <!-- ハンバーガーアイコン -->
   <div class="hamburger" id="hamburger-btn">
-    <img src="images/menu.png" width="60" height="60" alt="menu" id="menu-icon" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <!-- <i class="bi bi-list" id="menu-icon"></i> -->
+    <!-- <img src="images/menu.png" width="60" height="60" alt="menu" id="menu-icon" /> -->
   </div>
 
   <!-- ナビゲーションメニュー -->
@@ -24,11 +28,9 @@
     <a href="#greeting"><i class="bi bi-heart"></i> ご挨拶</a>
     <a href="#us"><i class="bi bi-person"></i> 私たち</a>
     <a href="#guests"><i class="bi bi-people"></i> みんな</a>
-    <a href="#schedule"><i class="bi bi-calendar-event"></i> 時間</a>
     <a href="#venue"><i class="bi bi-geo-alt"></i> 式について</a>
-    <a href="#money"><i class="bi bi-cash"></i> ご祝儀</a>
+    <a href="#schedule"><i class="bi bi-calendar-event"></i> 時間</a>
     <a href="#qa"><i class="bi bi-question-circle"></i> Q&A</a>
-    <a href="#photo"><i class="bi bi-camera"></i> 写真共有</a>
     <a href="#rsvp"><i class="bi bi-envelope"></i> 出欠</a>
   </nav>
 
@@ -48,7 +50,7 @@
   </section>
 
   <!-- ご挨拶：モコモコ雲で挟む -->
-  <div class="cloud-block">
+  <div class="cloud-block" id="greeting">
     <img src="images/mokomoko.png" class="cloud-top" alt="もこもこ雲" />
     <div class="cloud-content">
       <div class="intro-text">
@@ -122,27 +124,27 @@
               <div class="card-container">
                 <div class="card">
                   <h3>なおぴ</h3>
-                  <p>大学時代からの大親友。</p>
+                  <p>野球にいつも誘ってくれる、カツオ的な存在。リーダーシップ半端ない。</p>
                 </div>
                 <div class="card">
                   <h3>わたるん</h3>
-                  <p>応援団長。</p>
+                  <p>めったに怒らなくて優しいのでつい甘えてしまう。ヤクルトファンのお父さん。</p>
                 </div>
                 <div class="card">
                   <h3>なみちゃん</h3>
-                  <p>いつも盛り上げ役！</p>
+                  <p>年下だけど、人間としてかなりしっかりしている。礼儀の正しい関西ギャル。</p>
                 </div>
                 <div class="card">
                   <h3>ゆりちゃん</h3>
-                  <p>ムードメーカー。</p>
+                  <p>年上らしく、人間としてかなりしっかりしている。ビール（サッポロ）大好き。</p>
                 </div>
                 <div class="card">
                   <h3>ごきよ</h3>
-                  <p>場を盛り上げるムードメーカー。</p>
+                  <p>ちょっと頼りないけど優しい。男性に懐きやすい。あだ名の由来は本人まで。</p>
                 </div>
                 <div class="card">
                   <h3>ゆうた</h3>
-                  <p>応援熱心！</p>
+                  <p>お馬さんが大好き。同い年なので仲良し。ずっと立木さんって呼んでくる。</p>
                 </div>
               </div>
             </div>
@@ -152,23 +154,23 @@
               <div class="card-container">
                 <div class="card">
                   <h3>まな</h3>
-                  <p>サークル仲間。</p>
+                  <p>大学で初めてできた友達。人狼になっても嘘がつけないタイプ。</p>
                 </div>
                 <div class="card">
                   <h3>ちゅうこちゃん</h3>
-                  <p>ゼミの同期。</p>
+                  <p>中高の先輩かつ大学の同期！絶対誰のことも傷つけない、グループに1人いてほしい存在。</p>
                 </div>
                 <div class="card">
                   <h3>あきよし</h3>
-                  <p>研究室のお友達。</p>
+                  <p>1年生の自己紹介で盛岡冷麺好きをアピールして注目をかっさらった。上品おもしろお姉さん。</p>
                 </div>
                 <div class="card">
                   <h3>まつも</h3>
-                  <p>キャンパスの先輩。</p>
+                  <p>話し方とかはほんわかだけど、めっちゃしっかりしてる。ちょっとおかしなところがある。</p>
                 </div>
                 <div class="card">
                   <h3>まや</h3>
-                  <p>学園祭仲間。</p>
+                  <p>超マイペースでちょっと天然。行動力がすごいので、10年後何をしているのか楽しみ。</p>
                 </div>
               </div>
             </div>
@@ -178,15 +180,15 @@
               <div class="card-container">
                 <div class="card">
                   <h3>やの</h3>
-                  <p>塾の同級生。</p>
+                  <p>出会った時かなりイケてるJKだった。やのにツッコまれると嬉しい。</p>
                 </div>
                 <div class="card">
                   <h3>まりな</h3>
-                  <p>共に励まし合った仲。</p>
+                  <p>社会に揉まれてかなり丸くなったが、心の奥のギャル魂は今も燃え続けている。</p>
                 </div>
                 <div class="card">
                   <h3>よしば</h3>
-                  <p>勉強仲間。</p>
+                  <p>おっとりしてるけど、自分の芯がしっかりある。人への気遣いや思いやりに溢れてる。</p>
                 </div>
               </div>
             </div>
@@ -196,7 +198,7 @@
               <div class="card-container">
                 <div class="card">
                   <h3>かずほ</h3>
-                  <p>高校からの親友。</p>
+                  <p>中2でクラスが一緒になってから、</p>
                 </div>
               </div>
             </div>
@@ -521,23 +523,31 @@
     </div>
   </section>
 
-  <!-- ご祝儀 -->
-  <section id="money">
-    <h2>ご祝儀</h2>
-    <p>ご祝儀は当日ご持参いただくか、指定口座へのお振込みも可能です。</p>
-  </section>
-
   <!-- Q&A -->
   <section id="qa">
     <h2>Q&A</h2>
-    <p>子ども連れでも大丈夫ですか？<br>→ もちろん大歓迎です！</p>
-    <!-- 他にもQ&Aを追加可能 -->
-  </section>
-
-  <!-- 写真共有 -->
-  <section id="photo">
-    <h2>写真共有</h2>
-    <a href="#">Google Photo</a>
+    <dl>
+      <div>
+        <dt>駐車場はありますか？</dt>
+        <dd>回答です。</dd>
+      </div>
+      <div>
+        <dt>当日の持ち物はありますか？</dt>
+        <dd>回答です。</dd>
+      </div>
+      <div>
+        <dt>大きい荷物を預けられるクロークはありますか？</dt>
+        <dd>回答です。</dd>
+      </div>
+      <div>
+        <dt>キャンセルポリシーについて</dt>
+        <dd>回答です。</dd>
+      </div>
+      <div>
+        <dt>ご祝儀の支払い方法について</dt>
+        <dd>回答です。</dd>
+      </div>
+    </dl>
   </section>
 
   <!-- 出欠フォーム -->
