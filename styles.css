@@ -3,7 +3,8 @@ body {
   overflow-x: hidden;
 }
 
-/* #8A9A5B */
+/* グリーン　　　#8A9A5B */
+/* ピンク　　　　#eb9392 */
 
 body {
   font-family: "Kiwi Maru", serif;
@@ -153,12 +154,6 @@ footer {
   cursor: pointer;
   opacity: 0.8;
 }
-.album-btn:hover {
-  background: #e84a5f;
-  color: #fff;
-  box-shadow: 0 4px 16px #e84a5f33;
-  text-decoration: none;
-}
 
 .album-btn i {
   font-size: 1.1rem;
@@ -237,7 +232,7 @@ footer {
 .main-right h2 {
   font-size: 1.6em;
   margin: 0 0 8px 0;
-  color: #c8736f;
+  color: #eb9392;
   font-family: "Shippori Mincho", serif;
   font-weight: bold;
   letter-spacing: 1px;
@@ -273,17 +268,27 @@ footer {
   pointer-events: none;
 }
 
+.cloud-top {
+  margin-bottom: -2px;
+}
+
 .cloud-bottom {
   transform: scaleY(-1);
+  margin-top: -2px;
 }
 
 .cloud-content {
+  font-size: 18px;
   background: #eb9392;
-  padding: 8px 0;
+  padding: 20px 4px;
   margin: 0;
   text-align: center;
   color: #fff;
   position: relative;
+}
+
+.cloud-content p {
+  margin: 0;
 }
 
 /* ---- 2セクションテキスト用 ---- */
@@ -295,7 +300,7 @@ footer {
 
 .main-message {
   margin-top: 16px;
-  font-size: 1.15em;
+  font-size: 18px;
   color: #fff;
   opacity: 0;
   transform: translateY(36px);
@@ -926,7 +931,7 @@ dl>div.appear dd {
   top: 55px;
   bottom: 55px;
   width: 6px;
-  background: #c8736f;
+  background: #eb9392;
   ;
   border-radius: 3px;
   z-index: 0;
@@ -958,7 +963,7 @@ dl>div.appear dd {
 .v-point {
   width: 30px;
   height: 30px;
-  background: #c8736f;
+  background: #eb9392;
   border-radius: 50%;
   box-shadow: 0 2px 10px #f4b8e4bb;
   position: relative;
