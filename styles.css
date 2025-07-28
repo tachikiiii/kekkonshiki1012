@@ -735,6 +735,57 @@ input[name="tab_menu"] {
   box-shadow: 0 2px 10px #0001;
 }
 
+/* ---- テーマカラー ---- */
+
+.theme-color-section {
+  margin: 36px auto 28px auto;
+  padding: 22px 18px;
+  border-radius: 24px;
+  max-width: 420px;
+  text-align: center;
+  border: 2px solid #545454;
+}
+.theme-label {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #8A9A5B;
+  margin-bottom: 12px;
+  letter-spacing: .05em;
+}
+.color-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 16px 0 32px;
+}
+.badge.green {
+  padding: 16px 32px;
+  display: inline-block;
+  background: #8A9A5B;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+}
+.badge.pink {
+  padding: 16px 32px;
+  display: inline-block;
+  background: #eb9392;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+}
+#theme-msg {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #545454;
+}
+
+h3 {
+  margin: 0;
+}
+
+
 /* ---- 新郎新婦のアイコン ---- */
 .profile-icons {
   display: flex;
