@@ -190,4 +190,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ================================
+  // タイムラインが見えたときにアニメ開始
+  // ================================
+  const timeline = document.querySelector('.v-timeline');
+
+  if (timeline) {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            timeline.classList.add('animate');
+            observer.unobserve(timeline); // 1回だけ発火
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(timeline);
+  }
+
 });
