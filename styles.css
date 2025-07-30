@@ -3,6 +3,9 @@ body {
   overflow-x: hidden;
 }
 
+/* グリーン　　　#8A9A5B */
+/* ピンク　　　　#eb9392 */
+
 body {
   font-family: "Kiwi Maru", serif;
   line-height: 1.6;
@@ -44,10 +47,52 @@ footer {
   margin-bottom: 100px;
 }
 
+.white {
+  padding: 40px;
+  background: #fff;
+}
+
+.scroll-infinity {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-infinity__wrap {
+  display: flex;
+  width: max-content; /* コンテンツサイズに合わせる */
+  animation: infinity-scroll-left 20s linear infinite;
+}
+
+.scroll-infinity__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scroll-infinity__item {
+  width: calc(100vw / 6);
+  flex-shrink: 0;
+}
+
+.scroll-infinity__item > img {
+  width: 100%;
+}
+
+/* 左向きに無限スクロール */
+@keyframes infinity-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* ---- ハンバーガーメニュー ---- */
 .hamburger {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 24px;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -55,7 +100,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   background: none;
   border: none;
@@ -63,12 +108,12 @@ footer {
 
 .hamburger span {
   display: block;
-  width: 36px;
+  width: 28px;
   height: 4px;
-  background: #545454;
-  border-radius: 3px;
+  background: #e84a5f;
+  border-radius: 2px;
   transition: all 0.34s cubic-bezier(.68, -0.6, .32, 1.6);
-  opacity: .5;
+  opacity: .8;
 }
 
 .hamburger.open span {
@@ -76,7 +121,7 @@ footer {
 }
 
 .hamburger.open span:nth-child(1) {
-  transform: translateY(12px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -130,6 +175,35 @@ footer {
   clip-path: ellipse(70% 70% at 100% 50%);
   z-index: 990;
 }
+
+/* ---- 写真 ---- */
+.album-btn {
+  position: fixed;
+  top: 64px;
+  /* ハンバーガーの下（間はお好みで調整） */
+  right: 20px;
+  z-index: 998;
+  background: #8A9A5B;
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #e84a5f11;
+  transition: background .2s, color .2s, box-shadow .2s;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.album-btn i {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: block;
+}
+
 
 /* ---- メインビジュアル2カラム ---- */
 #main-visual {
@@ -201,7 +275,7 @@ footer {
 .main-right h2 {
   font-size: 1.6em;
   margin: 0 0 8px 0;
-  color: #c8736f;
+  color: #eb9392;
   font-family: "Shippori Mincho", serif;
   font-weight: bold;
   letter-spacing: 1px;
@@ -237,17 +311,27 @@ footer {
   pointer-events: none;
 }
 
+.cloud-top {
+  margin-bottom: -2px;
+}
+
 .cloud-bottom {
   transform: scaleY(-1);
+  margin-top: -2px;
 }
 
 .cloud-content {
+  font-size: 18px;
   background: #eb9392;
-  padding: 8px 0;
+  padding: 20px 4px;
   margin: 0;
   text-align: center;
   color: #fff;
   position: relative;
+}
+
+.cloud-content p {
+  margin: 0;
 }
 
 /* ---- 2セクションテキスト用 ---- */
@@ -259,7 +343,7 @@ footer {
 
 .main-message {
   margin-top: 16px;
-  font-size: 1.15em;
+  font-size: 18px;
   color: #fff;
   opacity: 0;
   transform: translateY(36px);
@@ -288,69 +372,6 @@ footer {
   letter-spacing: 0.02em;
 }
 
-/* ----ゲスト紹介トグル---- */
-
-.guest-toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #555;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 64px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  inset: 0;
-  background-color: #eb9392;
-  cursor: pointer;
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  content: "";
-  position: absolute;
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #fff;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked+.slider {
-  background-color: #8A9A5B;
-}
-
-input:checked+.slider:before {
-  transform: translateX(30px);
-}
-
-.guests-content {
-  display: none;
-  animation: fadeIn 0.5s ease;
-}
-
-.guests-content.active {
-  display: block;
-}
 
 @keyframes fadeIn {
   from {
@@ -399,6 +420,7 @@ input:checked+.slider:before {
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;
+
 }
 
 /* 新婦側のゲストボタン*/
@@ -407,9 +429,8 @@ input:checked+.slider:before {
   padding: 8px 16px;
   font-size: 1.12rem;
   font-family: inherit;
-    border: 2.5px solid #fff;
   border-radius: 30px;
-  background: #f39c2d;
+  background: #fff;
   color: #fff;
   font-weight: bold;
   transition:
@@ -427,26 +448,30 @@ input:checked+.slider:before {
   margin-bottom: 0;
   position: relative;
   z-index: 10;
+  border: 2.5px solid #ffa07a;
+
 }
 
 .tab.active {
   background: #fff;
-  color: #f39c2d;
+  color: #ffa07a;
   font-weight: bold;
   transform: translateY(-3px) scale(1.04);
+  border: 2.5px solid #ffa07a;
 }
 
 .tab:active,
 .tab:focus-visible {
   outline: none;
-  background: #fff;
-  color: #f39c2d;
+  background: #ffa07a;
+  color: #fff;
   transform: scale(0.98);
 }
 
 .tab:not(.active) {
   color: #fff;
-  background: #f39c2d;
+  background: #ffa07a;
+  border: 2.5px solid #fff;
 }
 
 .tabs .tab+.tab {
@@ -461,7 +486,7 @@ input:checked+.slider:before {
   font-family: inherit;
   border: 2.5px solid #fff;
   border-radius: 30px;
-  background: #39b0f8;
+  background: #87ceeb;
   color: #fff;
   font-weight: bold;
   transition:
@@ -483,23 +508,25 @@ input:checked+.slider:before {
 
 .tab.blue.active {
   background: #fff;
-  color: #39b0f8;
+  color: #87ceeb;
   font-weight: bold;
   transform: translateY(-3px) scale(1.04);
+  border: 2.5px solid #fff;
 }
 
 .tab.blue:active,
 .tab.blue:focus-visible {
   outline: none;
   background: #fff;
-  color: #39b0f8;
+  color: #87ceeb;
   transform: scale(0.98);
+  border: 2.5px solid #87ceeb;
 }
 
 .tab.blue:not(.active) {
   /* border: 2.2px solid #999; */
   color: #fff;
-  background: #39b0f8;
+  background: #87ceeb;
 }
 
 
@@ -532,20 +559,20 @@ input:checked+.slider:before {
   position: relative;
   width: 120px;
   margin: 0 5px;
-  background-color: orange;
+  /* background-color: orange; */
   line-height: 36px;
   float: left;
   text-align: center;
   transition: all 0.2s ease;
-  border: solid 4px orange;
+  border: solid 4px #ffa07a;
   border-radius: 8px 8px 0 0;
   cursor: pointer;
   box-sizing: border-box;
-  color: #fff;
+  color: #ffa07a;
 }
 
 .tab_menu:hover {
-  color: #fff;
+  color: #ffa07a;
 }
 
 .tab_menu:first-of-type {
@@ -561,7 +588,8 @@ input[name="tab_menu"] {
   display: none;
   z-index: 1;
   clear: both;
-  border: solid 4px orange;
+  /* border: solid 4px #ff7f50; */
+  background: #ffa07a;
   border-radius: 8px;
   padding: 15px 20px;
   margin: 0 0 30px 0;
@@ -576,46 +604,54 @@ input[name="tab_menu"] {
 
 /* 新婦タブ選択時 */
 #tab_a:checked~label[for="tab_a"] {
-  border: 1px solid orange;
-  border-bottom: orange;
-  background: orange;
+  border: 4px solid #ffa07a;
+  border-bottom: 1px solid #ffa07a;
+  background: #ffa07a;
+  color: #fff;
 }
 
 #tab_a:checked~label[for="tab_b"] {
-  border: 1px solid #38bdf8;
-  background: #38bdf8;
-  border-bottom: 1px solid #38bdf8;
-  opacity: .6;
+  border: 4px solid #87ceeb;
+  background: #87ceeb;
+  border-bottom: 1px solid #87ceeb;
+  border-bottom: #ffa07a;
+  /* opacity: .6; */
+  color: #fff;
 }
 
 #tab_a:checked~#tab_a_content {
-  border: 1px solid orange;
-  background: orange;
+  border: 4px solid #ffa07a;
+  /* background: orange; */
 }
 
 /* 新郎タブ選択時 */
 #tab_b:checked~label[for="tab_b"] {
-  border: 1px solid #38bdf8;
-  border-bottom: #38bdf8;
-  background: #38bdf8;
+  border: 4px solid #87ceeb;
+  border-bottom: 1px solid #87ceeb;
+  color: #fff;
+  background: #87ceeb;
 }
 
 #tab_b:checked~label[for="tab_a"] {
-  border: 1px solid orange;
-  border-bottom: 1px solid orange;
-  opacity: .6;
+  border: 4px solid #ffa07a;
+  background: #ffa07a;
+  border-bottom: 1px solid #ffa07a;
+  border-bottom: #87ceeb;
+  /* opacity: .6; */
+  color: #fff;
 }
 
 #tab_b:checked~#tab_b_content {
-  border: 1px solid #38bdf8;
-  background: #38bdf8;
+  border: 4px solid #87ceeb;
+  background: #87ceeb;
 }
 
 /* ゲストの写真 */
 .guest-photo {
   width: 100px;
   /* 大きさ調整はここ */
-  height: 100px object-fit: cover;
+  height: 100px;
+  object-fit: cover;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
@@ -627,70 +663,6 @@ input[name="tab_menu"] {
   margin-bottom: 12px;
 }
 
-.simple-timeline {
-  position: relative;
-  margin: 0 auto;
-  max-width: 440px;
-  padding-left: 32px;
-}
-.simple-timeline::before {
-  content: '';
-  position: absolute;
-  top: 18px;
-  left: 32px;
-  bottom: 18px;
-  width: 2.5px;
-  background: #545454;
-  border-radius: 1.5px;
-  z-index: 0;
-}
-.timeline-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 58px;
-}
-.timeline-heart {
-  position: absolute;
-  left: 17px;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  z-index: 1;
-  /* 透過＆少し大きめ */
-}
-.timeline-heart .bi-heart-fill {
-  color: #545454cc; /* 80%透過 */
-  font-size: 1.8rem;
-  filter: drop-shadow(0 2px 4px #0001);
-}
-.timeline-labels {
-  margin-left: 56px;
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-}
-.timeline-time, .timeline-desc {
-  font-size: 1.08em;
-  color: #545454;
-  font-family: inherit;
-  letter-spacing: .02em;
-}
-.timeline-time {
-  font-weight: bold;
-  min-width: 58px;
-}
-@media (max-width: 600px) {
-  .simple-timeline { max-width: 97vw; padding-left: 12px;}
-  .timeline-labels { margin-left: 40px;}
-  .timeline-heart { left: 4px; width: 22px; height: 22px;}
-  .timeline-row { min-height: 38px;}
-  .timeline-heart .bi-heart-fill { font-size: 1.25rem;}
-}
 
 @media (min-width: 701px) {
 
@@ -707,7 +679,6 @@ input[name="tab_menu"] {
     /* 横も縦も余白しっかり */
     justify-content: center;
     max-width: 900px;
-    /* 260×3 + 36×2 = 852px くらい */
     margin-left: auto;
     margin-right: auto;
     overflow-x: unset;
@@ -763,52 +734,45 @@ input[name="tab_menu"] {
   right: 0;
 }
 
-/* タイムスケジュール */
-.schedule-row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 10px;
-  margin-top: 36px;
-  margin-bottom: 36px;
-}
-
-.hop-img {
-  width: 22vw;
-  max-width: 105px;
-  min-width: 64px;
-  height: auto;
-  transform: translateY(calc(var(--i) * 30px));
-  opacity: 0;
-  /* animation指定しない！ここでは外す */
-}
 
 
-/* 式場 */
+/* ---- 式場 ---- */
 .venue-name {
-  font-size: 1.3em;
+  font-size: 24px;
   font-family: "Shippori Mincho", serif;
   font-weight: bold;
   color: #545454;
-  margin: 16px 0;
+  margin: 16px 0 0 0;
   letter-spacing: 1px;
 }
 
 .venue-sub {
-  font-size: 0.9em;
+  font-size: 22px;
   color: #545454;
+  padding: 0;
+  margin: 0;
+}
+
+.venue + p {
+  margin: 0;
+  padding: 0;
 }
 
 .venue-maplink {
   display: inline-block;
-  margin: 8px 0;
-  font-size: 1em;
-  color: #fff;
-  background: #8A9A5B;
-  padding: 6px 20px;
-  border-radius: 30px;
+  margin: 0;
+  font-size: 12px;
+  color: #8A9A5B;
+  /* background: #8A9A5B; */
+  border: 2px solid #8A9A5B;
+  padding: 2px 8px;
+  border-radius: 24px;
   text-decoration: none;
   transition: background 0.2s;
+}
+
+.bi-geo-alt {
+  font-size: 12px;
 }
 
 .venue-maplink:hover {
@@ -828,6 +792,72 @@ input[name="tab_menu"] {
   border: none;
   box-shadow: 0 2px 10px #0001;
 }
+
+/* ---- ドレスコード ---- */
+
+.theme-color-section {
+  margin: 36px auto 28px auto;
+  padding: 20px;
+  border-radius: 24px;
+  max-width: 420px;
+  text-align: center;
+  border: 2px solid #545454;
+}
+
+.theme-label {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #8A9A5B;
+  margin-bottom: 12px;
+  letter-spacing: .05em;
+}
+
+.color-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 16px 0 32px;
+}
+
+.badge.green {
+  padding: 16px 32px;
+  display: inline-block;
+  background: #8A9A5B;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.badge.pink {
+  padding: 16px 32px;
+  display: inline-block;
+  background: #eb9392;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+}
+
+#theme-msg {
+  margin-top: 20px;
+  padding: 0 16px;
+  border: 2px solid #545454;
+  border-radius: 24px;
+  padding: 16px 0;
+}
+
+#mini-msg {
+  background: #ddd;
+  font-size: 18px;
+  margin: 16px;
+  padding: 8px;
+  /* border-radius: 24px; */
+}
+
+h3 {
+  margin: 0;
+}
+
 
 /* ---- 新郎新婦のアイコン ---- */
 .profile-icons {
@@ -866,16 +896,12 @@ input[name="tab_menu"] {
     transform: translateY(-22px);
   }
 }
-/* .profile-img:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-} */
 
 .tap-label {
   margin: 16px auto 0;
   font-size: 1.1rem;
   font-weight: bold;
   color: #38bdf8;
-  /* 明るい青系 */
   letter-spacing: 0.06em;
   animation: tapBlink 1.3s infinite alternate;
   user-select: none;
@@ -943,7 +969,7 @@ input[name="tab_menu"] {
   }
 }
 
-/* Q&A */
+/* ---- Q&A ---- */
 
 dl {
   margin-top: 32px;
@@ -1009,23 +1035,190 @@ dl>div.appear dd {
   }
 }
 
+/* ---------------------------------ここからタイムライン */
 
-/* スマホ時は縦並び */
-@media (max-width: 700px) {
+.v-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px auto 0;
+  max-width: 200px;
+  width: 95vw;
+  padding: 32px 0 32px 32px;
+}
 
-  .card {
-    flex: 0 0 auto;
-    width: 200px;
-    margin-right: 16px;
-    padding: 12px;
-    border-radius: 8px;
-    background: #fff;
-    scroll-snap-align: start;
+.v-timeline::before {
+  content: '';
+  position: absolute;
+  left: 44px;
+  top: 55px;
+  bottom: 55px;
+  width: 6px;
+  background: #eb9392;
+  border-radius: 3px;
+  z-index: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.v-timeline.animate::before {
+  animation: drawVLine 1.3s cubic-bezier(.68, .11, .4, 1.15) .2s forwards;
+}
+
+@keyframes drawVLine {
+  to {
+    transform: scaleY(1);
   }
 }
 
+.v-timeline.animate .v-point {
+  animation: popNode 1s cubic-bezier(.57, 1.5, .6, .98) forwards;
+}
 
-/* ←ココを追加 */
+.v-timeline.animate .v-label {
+  animation: fadeLabel 0.8s cubic-bezier(.68, .11, .4, 1.15) forwards;
+}
+
+/* 遅延を node の順で */
+.v-node:nth-child(1) .v-point,
+.v-node:nth-child(1) .v-label {
+  animation-delay: .3s;
+}
+
+.v-node:nth-child(2) .v-point,
+.v-node:nth-child(2) .v-label {
+  animation-delay: .5s;
+}
+
+.v-node:nth-child(3) .v-point,
+.v-node:nth-child(3) .v-label {
+  animation-delay: .7s;
+}
+
+.v-node:nth-child(4) .v-point,
+.v-node:nth-child(4) .v-label {
+  animation-delay: .9s;
+}
+
+
+.v-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 38px;
+  z-index: 1;
+  min-height: 60px;
+}
+
+.v-node:last-child {
+  margin-bottom: 0;
+}
+
+.v-point {
+  width: 30px;
+  height: 30px;
+  background: #eb9392;
+  border-radius: 50%;
+  /* box-shadow: 0 2px 10px #f4b8e4bb; */
+  position: relative;
+  z-index: 2;
+  margin-right: 50px;
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.v-node:nth-child(1) .v-point {
+  animation-delay: .3s;
+}
+
+.v-node:nth-child(2) .v-point {
+  animation-delay: .5s;
+}
+
+.v-node:nth-child(3) .v-point {
+  animation-delay: .7s;
+}
+
+.v-node:nth-child(4) .v-point {
+  animation-delay: .9s;
+}
+
+@keyframes popNode {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.v-label {
+  font-size: 1.05rem;
+  color: #545454;
+  margin-top: 0;
+  line-height: 1.4;
+  opacity: 0;
+  animation: translateY(-24px);
+}
+
+@keyframes fadeLabel {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.v-node:nth-child(1) .v-label {
+  animation-delay: .3s;
+}
+
+.v-node:nth-child(2) .v-label {
+  animation-delay: .5s;
+}
+
+.v-node:nth-child(3) .v-label {
+  animation-delay: .7s;
+}
+
+.v-node:nth-child(4) .v-label {
+  animation-delay: .9s;
+}
+
+
+.timeline-time {
+  color: #545454;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 2.6px;
+}
+
+.timeline-title {
+  color: #545454;
+  font-weight: 500;
+  font-size: 1.01rem;
+  letter-spacing: .5px;
+  opacity: .8;
+}
+
+
+
+/* モバイル調整も基本そのままでOK */
+
+
+/* ---------------------------------ここまでタイムライン */
+
+
+
+/* ←ココを追加
 .hop-img.animated {
   animation: hopin 0.7s cubic-bezier(.2, 1.5, .4, 1) forwards;
   animation-delay: calc(var(--i) * 0.33s);
@@ -1050,7 +1243,7 @@ dl>div.appear dd {
     opacity: 1;
     transform: translateY(calc(var(--i) * 30px)) scale(1);
   }
-}
+} */
 
 
 /* ---- レスポンシブ ---- */
@@ -1066,6 +1259,17 @@ dl>div.appear dd {
 }
 
 @media (max-width: 700px) {
+
+  .card {
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff;
+    scroll-snap-align: start;
+  }
+
   section {
     padding: 30px 20px;
     text-align: left;
@@ -1159,3 +1363,4 @@ dl>div.appear dd {
       display: none;
     }
   }
+}
