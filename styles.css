@@ -648,14 +648,18 @@ input[name="tab_menu"] {
 
 /* ゲストの写真 */
 .guest-photo {
-  width: 100px;
-  /* 大きさ調整はここ */
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 90%;                /* カード枠の90%幅にフィット */
+  aspect-ratio: 3/4;         /* 3:4 の縦長（例：120×160） */
+  object-fit: cover;         /* 上下を中央トリミング */
+  object-position: center;   /* 顔が中央にくるように */
+  border-radius: 12px;       /* 角丸（丸くなりすぎない程度） */
+  margin: 8px auto 14px auto;
   display: block;
-  margin: 0 auto;
+  background: #f6f5ea;       /* 背景色（保険） */
+  box-shadow: none;          /* シャドウなし */
+  border: none;              /* 枠線なし。欲しければborder: 2px solid #eee */
 }
+
 
 .card .guest-photo {
   /* カードの中だけ中央配置 */
