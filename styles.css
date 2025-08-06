@@ -59,7 +59,8 @@ footer {
 
 .scroll-infinity__wrap {
   display: flex;
-  width: max-content; /* コンテンツサイズに合わせる */
+  width: max-content;
+  /* コンテンツサイズに合わせる */
   animation: infinity-scroll-left 20s linear infinite;
 }
 
@@ -75,7 +76,7 @@ footer {
   flex-shrink: 0;
 }
 
-.scroll-infinity__item > img {
+.scroll-infinity__item>img {
   width: 100%;
 }
 
@@ -84,6 +85,7 @@ footer {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -178,10 +180,12 @@ footer {
 /* ---- 写真 ---- */
 .album-btn {
   position: fixed;
-  top: 70px;      /* ハンバーガーの下に調整したいならここを変更 */
+  top: 70px;
+  /* ハンバーガーの下に調整したいならここを変更 */
   right: 15px;
   z-index: 998;
-  width: 44.8px;    /* 小さめ：24～32pxくらいが一般的 */
+  width: 44.8px;
+  /* 小さめ：24～32pxくらいが一般的 */
   height: 35.8px;
   padding: 0;
   cursor: pointer;
@@ -638,12 +642,16 @@ input[name="tab_menu"] {
 
 /* ゲストの写真 */
 .guest-photo {
-  width: 100%;                /* カード枠の90%幅にフィット */
-  object-fit: cover;         /* 上下を中央トリミング */
-  object-position: center;   /* 顔が中央にくるように */
+  width: 100%;
+  /* カード枠の90%幅にフィット */
+  object-fit: cover;
+  /* 上下を中央トリミング */
+  object-position: center;
+  /* 顔が中央にくるように */
   margin: 8px auto 14px auto;
   display: block;
-  background: #f6f5ea;       /* 背景色（保険） */
+  background: #f6f5ea;
+  /* 背景色（保険） */
 }
 
 
@@ -743,7 +751,7 @@ input[name="tab_menu"] {
   margin: 0;
 }
 
-.venue + p {
+.venue+p {
   margin: 0;
   padding: 0;
 }
@@ -863,16 +871,27 @@ h3 {
   object-fit: cover;
   cursor: pointer;
   transition: box-shadow 0.2s;
+}
+
+.tap-container {
   animation: floatY 2.2s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.tap-container p {
+  position: absolute;
+  top: 47px;
+  left: 78px;
+  cursor: pointer;
 }
 
 /* 1つ目のアイコン（左）は delay 0s */
-.profile-img:first-child {
+.tap-container:first-child {
   animation-delay: 0s;
 }
 
 /* 2つ目のアイコン（右）は delay 1.1s（半分ずらすと可愛い） */
-.profile-img:last-child {
+.tap-container:last-child {
   animation-delay: 1.1s;
 }
 
@@ -890,9 +909,9 @@ h3 {
   margin: 16px auto 0;
   font-size: 1.1rem;
   font-weight: bold;
-  color: #38bdf8;
+  color: #fff;
   letter-spacing: 0.06em;
-  animation: tapBlink 1.3s infinite alternate;
+  animation: tapBlink 2s infinite alternate;
   user-select: none;
   text-align: center;
   width: fit-content;
@@ -900,11 +919,11 @@ h3 {
 
 @keyframes tapBlink {
   0% {
-    opacity: 0.7;
+    opacity: .1;
   }
 
   100% {
-    opacity: 1;
+    opacity: .8;
   }
 }
 
