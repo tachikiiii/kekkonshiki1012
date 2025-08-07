@@ -1096,6 +1096,16 @@ dl>div.appear dd {
   animation: .5s fadeInQa;
 }
 
+.cancel-policy-link {
+  cursor: pointer;
+  color: #8A9A5B;
+  transition: color 0.2s;
+}
+
+.cancel-policy-link:hover {
+  color: #6b7840;
+}
+
 @keyframes fadeInQa {
   from {
     opacity: 0;

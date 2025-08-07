@@ -142,11 +142,35 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>1994/11/8 生まれ<br>千葉県出身　ENFP</p>
       <p><b>「立木」</b><br>全国順位　2,554位<br>全国人数　約5,400人</p>
       <p>→ 自分より珍しい名字の人に<br>出会ってしまった</p>
+    `,
+        cancelPolicy: `
+      <h3>キャンセルポリシーについて</h3>
+      <div style="text-align: left; font-size: 16px; line-height: 1.6;">
+        <p><b>■ BEB5軽井沢</b></p>
+        <p>・宿泊日の32日前まで：キャンセル料無料<br>
+        ・31日前以降：規定のキャンセル料が発生</p>
+        <p style="color: #e84a5f; font-weight: bold;">・各部屋での人数増減は各自で調整をお願いします</p>
+        <br>
+        <p><b>■ ポーラーハウス（コテージ）</b></p>
+        ・チェックイン7日前15時まで：宿泊料金の50%返金<br>
+        ・期限後：返金なし（オプション料金は手数料を引いて返金）<br>
+        ・当日キャンセル：全額返金なし</p>
+        
+        <p><b>【天災の場合】</b><br>
+        ・一年以内の別日振替可能（返金なし）<br>
+        ・交通機関が通常運行の場合は通常のキャンセル料が発生<br>
+        ・新型コロナ等パンデミック関連は天災扱い対象外</p>
+        
+        <p style="font-size: 14px; color: #666; margin-top: 20px;">
+        ※ご質問等ございましたらご連絡ください
+        </p>
+      </div>
     `
   };
 
   const shigetoBtn = document.getElementById('shigeto');
   const tachikiBtn = document.getElementById('tachiki');
+  const cancelPolicyLink = document.querySelector('.cancel-policy-link');
   const closeBtn = document.getElementById('closeBtn');
   const modal = document.getElementById('modal');
   const modalText = document.getElementById('modalText');
@@ -154,6 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (shigetoBtn && tachikiBtn && closeBtn && modal && modalText) {
     shigetoBtn.onclick = () => showModal('shigeto');
     tachikiBtn.onclick = () => showModal('tachiki');
+    if (cancelPolicyLink) {
+      cancelPolicyLink.onclick = () => showModal('cancelPolicy');
+    }
     closeBtn.onclick = closeModal;
     // モーダル外クリックで閉じる
     modal.onclick = (e) => {
