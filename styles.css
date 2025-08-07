@@ -29,6 +29,10 @@ h2 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 section {
   padding: 60px 80px;
   margin: 0;
@@ -331,13 +335,11 @@ footer {
 /* ---- 2セクションテキスト用 ---- */
 .intro-text {
   margin-bottom: 32px;
-  font-size: 1.07em;
   color: #fff;
 }
 
 .main-message {
   margin-top: 16px;
-  font-size: 18px;
   color: #fff;
   opacity: 0;
   transform: translateY(36px);
@@ -666,7 +668,7 @@ input[name="tab_menu"] {
 
   .tab_contents_box {
     width: 900px;
-    margin: 0 auto 30px auto;
+    margin: 60px auto 30px auto;
   }
 
   .card-container {
@@ -790,16 +792,56 @@ input[name="tab_menu"] {
   box-shadow: 0 2px 10px #0001;
 }
 
+/* バス */
+
+.bus .bus2 {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bus img {
+  animation: moveLeft 15s linear infinite;
+  margin-right: 40px;
+  animation-delay: 3s;
+}
+
+.bus2 img {
+  animation: moveRight 15s linear infinite;
+  margin-right: 40px;
+  animation-delay: 6s;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
 /* ---- ドレスコード ---- */
 
-.theme-color-section {
+/* .theme-color-section {
   margin: 36px auto 28px auto;
   padding: 20px;
   border-radius: 24px;
   max-width: 420px;
   text-align: center;
   border: 2px solid #545454;
-}
+} */
 
 .theme-label {
   font-size: 1.25em;
@@ -853,6 +895,29 @@ input[name="tab_menu"] {
 
 h3 {
   margin: 0;
+}
+
+/* ご祝儀 */
+
+#goshugi {
+  & .waku {
+    margin: 36px auto 28px auto;
+    padding: 20px;
+    border-radius: 24px;
+    max-width: 420px;
+    text-align: center;
+    border: 2px solid #545454;
+  }
+
+  & p {
+    margin: 16px;
+  }
+}
+
+/* 二次会 */
+
+#after-party ul {
+  text-align: left;
 }
 
 
@@ -990,7 +1055,7 @@ dl>div {
 }
 
 dt {
-  padding: 8px 24px 8px 16px;
+  padding: 8px 34px 8px 16px;
   cursor: pointer;
   user-select: none;
   position: relative;
@@ -1015,7 +1080,7 @@ dl>div.appear dt::after {
 }
 
 dd {
-  padding: 0 0 16px 32px;
+  padding: 0 32px 16px;
   margin: 0;
   display: none;
   font-size: 16px;
@@ -1276,6 +1341,10 @@ dl>div.appear dd {
     border-radius: 8px;
     background: #fff;
     scroll-snap-align: start;
+  }
+
+  .tab_contents_box {
+    margin: 30px auto 30px auto;
   }
 
   section {

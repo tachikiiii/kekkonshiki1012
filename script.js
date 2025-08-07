@@ -197,11 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (timeline) {
     const observer = new IntersectionObserver(
-      (entries, observer) => {
+      (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            timeline.classList.add('animate');
-            observer.unobserve(timeline); // 1回だけ発火
+            timeline.classList.add('animate'); // 見えたら発火
+          } else {
+            timeline.classList.remove('animate'); // 見えなくなったら戻す
           }
         });
       },
@@ -209,5 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     observer.observe(timeline);
   }
+
 
 });
