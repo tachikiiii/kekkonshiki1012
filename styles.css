@@ -937,6 +937,7 @@ input[name="tab_menu"] {
 
 .card p {
   font-size: 16px;
+  margin: 4px 0 8px 0;
 }
 
 .card:last-child {
