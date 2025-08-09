@@ -2,6 +2,21 @@
 // DOMContentLoadedイベントでまとめる
 // ================================
 document.addEventListener("DOMContentLoaded", () => {
+
+  const splashScreen = document.getElementById('splash-screen');
+  const mainContent = document.querySelector('.main-content');
+  
+  // 3秒後にスプラッシュスクリーンをフェードアウト
+  setTimeout(() => {
+    splashScreen.classList.add('fade-out');
+    
+    // フェードアウト完了後にメインコンテンツを表示
+    setTimeout(() => {
+      splashScreen.style.display = 'none';
+      mainContent.classList.add('show');
+    }, 1000); // CSS transitionと同じ時間
+  }, 3000); // 3秒間表示
+
   // ---- ハンバーガーメニュー ----
   const hamburger = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('sidebar');
