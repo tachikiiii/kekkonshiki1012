@@ -995,7 +995,7 @@ input[name="tab_menu"] {
   margin: 16px 0 8px 0;
   font-size: 12px;
   color: #fff;
-  border-radius: 16px;
+  border-radius: 30px;
   padding: 8px 16px;
   text-decoration: none;
   transition: background 0.2s;
@@ -1025,6 +1025,10 @@ input[name="tab_menu"] {
 }
 
 /* バス */
+
+.bus-group {
+  margin: 16px 0;
+}
 
 .bus .bus2 {
   width: 100vw;
@@ -1383,7 +1387,7 @@ dl>div.appear dd {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 16px auto 0;
+  margin: 0 auto;
   max-width: 200px;
   width: 95vw;
   padding: 32px 0 32px 32px;
