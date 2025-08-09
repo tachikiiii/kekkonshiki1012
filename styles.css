@@ -423,7 +423,7 @@ footer {
 .cloud-content {
   font-size: 18px;
   background: #eb9392;
-  padding: 20px 4px;
+  padding: 80px 4px;
   margin: 0;
   text-align: center;
   color: #fff;
@@ -521,7 +521,7 @@ footer {
 
   .floating-image.right-top {
     right: 12px;
-    top: 12px;
+    top: 6px;
     width: 120px;
   }
 
@@ -541,7 +541,7 @@ footer {
 
   .floating-image.right-top {
     right: 10px;
-    top: 10px;
+    top: 0;
     width: 100px;
   }
 
@@ -1162,7 +1162,8 @@ h3 {
 #after-party {
   & ul {
     text-align: left;
-    margin: 0;
+    margin: 16px 0 0 0;
+
   }
 
   & p {
@@ -1173,6 +1174,10 @@ h3 {
     max-width: 300px;
     margin: 0 auto;
   }
+}
+
+.cottage {
+  border-radius: 8px;
 }
 
 
