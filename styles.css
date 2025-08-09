@@ -335,6 +335,130 @@ footer {
   margin: 0;
 }
 
+/* ---- ふわふわアニメーション画像 ---- */
+.floating-image {
+  position: absolute;
+  z-index: 10;
+}
+
+.floating-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* 右上の画像 */
+.floating-image.right-top {
+  right: 50px;
+  top: 50px;
+  animation: float2 4s ease-in-out infinite 0.5s;
+  width: 150px;
+}
+
+/* 左下の画像 */
+.floating-image.left-bottom {
+  left: 50px;
+  bottom: 50px;
+  animation: float3 3.5s ease-in-out infinite 1s;
+  width: 100px;
+}
+
+/* アニメーション定義 */
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(5px) translateY(-8px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateX(-3px) translateY(5px) rotate(1deg);
+  }
+
+  75% {
+    transform: translateX(8px) translateY(-3px) rotate(2deg);
+  }
+}
+
+@keyframes float3 {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  30% {
+    transform: translateX(-6px) translateY(-10px) rotate(1deg);
+  }
+
+  60% {
+    transform: translateX(8px) translateY(6px) rotate(-1deg);
+  }
+
+  90% {
+    transform: translateX(-4px) translateY(-2px) rotate(2deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+
+  .floating-image.right-top {
+    right: 12px;
+    top: 12px;
+    width: 120px;
+  }
+
+  .floating-image.left-bottom {
+    left: 12px;
+    bottom: 12px;
+    width: 100px;
+  }
+
+  /* .cloud-content {
+                font-size: 16px;
+                padding: 30px 15px;
+                padding-left: 90px; /* 左下画像のスペースを確保 */
+}
+
+@media (max-width: 480px) {
+
+  .floating-image.right-top {
+    right: 10px;
+    top: 10px;
+    width: 100px;
+  }
+
+  .floating-image.left-bottom {
+    left: 10px;
+    bottom: 10px;
+    width: 70px;
+  }
+
+  /* .cloud-content {
+    font-size: 14px;
+    padding: 25px 10px;
+    padding-left: 70px;
+  } */
+}
+
 /* ---- 2セクションテキスト用 ---- */
 .intro-text {
   margin-bottom: 32px;
@@ -942,6 +1066,10 @@ h3 {
     margin: 32px 0;
   }
 
+  & div {
+    max-width: 200px;
+    margin: 0 auto;
+  }
 }
 
 
