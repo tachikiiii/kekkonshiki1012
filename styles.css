@@ -183,6 +183,13 @@ footer {
   padding-left: 160px;
   clip-path: ellipse(70% 70% at 100% 50%);
   z-index: 990;
+
+  & img {
+    position: absolute;
+    bottom: 20%;    /* 下から20pxの位置 */
+    right: 10%;     /* 右から10pxの位置 */
+    margin: 0;
+  }
 }
 
 /* ---- 写真 ---- */
