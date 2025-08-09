@@ -46,7 +46,8 @@ footer {
   text-align: center;
   padding: 40px 20px;
   font-size: 0.9em;
-  color: #545454;
+  color: #fff;
+  background: #545454;
 }
 
 #date {
@@ -1193,6 +1194,12 @@ h3 {
     transform: translateY(0) scale(1);
     opacity: 1;
   }
+}
+
+/* camera */
+
+#camera #girl{
+    padding: 16px 0;
 }
 
 /* ---- Q&A ---- */
