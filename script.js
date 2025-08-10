@@ -253,5 +253,22 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(timeline);
   }
 
-
 });
+
+  // ご祝儀
+   function toggleDetails(detailsId) {
+            const details = document.getElementById(detailsId);
+            const option = details.previousElementSibling;
+            
+            // 他の詳細を閉じる
+            document.querySelectorAll('.payment-details').forEach(detail => {
+                if (detail.id !== detailsId) {
+                    detail.classList.remove('show');
+                    detail.previousElementSibling.classList.remove('active');
+                }
+            });
+            
+            // 現在の詳細をトグル
+            details.classList.toggle('show');
+            option.classList.toggle('active');
+        }

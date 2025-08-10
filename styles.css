@@ -273,14 +273,6 @@ footer {
   clip-path: ellipse(70% 70% at 100% 50%);
   z-index: 990;
 
-  & img {
-    position: absolute;
-    bottom: 20%;
-    /* 下から20pxの位置 */
-    right: 10%;
-    /* 右から10pxの位置 */
-    margin: 0;
-  }
 }
 
 /* ---- 写真 ---- */
@@ -1153,9 +1145,54 @@ h3 {
     border: 2px solid #545454;
   }
 
+  & ul {
+    padding: 0;
+    text-align: left;
+  }
+
   & p {
     margin: 16px;
+    font-size: 16px;
   }
+}
+
+.payment-sect {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.payment-container {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-option.clickable {
+  color: #8A9A5B;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.payment-details {
+  padding: 0; /* 最初はpaddingも0に */
+  background-color: transparent; /* または背景色を透明に */
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.payment-details.show {
+  max-height: 200px;
+  background: #ddd;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.bank-details {
+  margin: 8px 0;
 }
 
 /* 二次会 */
@@ -1165,6 +1202,10 @@ h3 {
     text-align: left;
     margin: 16px 0 0 0;
 
+    & li {
+      font-size: 16px;
+    }
+
   }
 
   & p {
@@ -1172,7 +1213,7 @@ h3 {
   }
 
   & div {
-    max-width: 300px;
+    max-width: 350px;
     margin: 0 auto;
   }
 }

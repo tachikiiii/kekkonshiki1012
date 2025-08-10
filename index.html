@@ -128,8 +128,10 @@
     <!-- みんな -->
     <section id="guests">
       <!-- <h2>みんな</h2> -->
-      <p>そして 大好きなゲストの<br>みなさまをご紹介します</p>
-      <p>新郎新婦が愛を込めて語ります</p>
+      <p>そして 大好きなゲストのみなさまを<br>
+      <p>新郎新婦が愛を込めてご紹介します</p>
+      <p>（AI似顔絵の精度はご愛嬌...）</p>
+
 
       <div class="tab_contents_box">
         <input id="tab_b" type="radio" name="tab_menu" checked>
@@ -655,15 +657,15 @@
     <img src="images/cottage.png" width="80%" alt="cottage" class="cottage" />
     <div>
       <ul>
-        <li>日時：<small>式当日 16〜19時</small></li>
-        <li>会場：<small>ポーラーハウス カナディアン南軽井沢1</small></li>
-        <li>住所：<small>長野県北佐久郡軽井沢町発地336-1</small></li>
-        <li>会費：<small>5000円</small></li>
+        <li>日時：式当日 16〜19時</li>
+        <li>会場：ポーラーハウス カナディアン南軽井沢1</li>
+        <li>住所：長野県北佐久郡軽井沢町発地336-1</li>
+        <li>会費：5000円</li>
       </ul>
     </div>
     <p>コテージを貸し切って<br>
-      食材持ち寄りでパーティをします！<br>
-      ゲームをしたり<br>立木の餃子が食べられるかも...
+      ホームパーティのような二次会です！<br>
+      みんなで遊べるゲームを<br>ご用意しています<br>立木の餃子も食べられるかも...
       <img src="images/gyoza.png" width="30" alt="gyoza" />
     </p>
 
@@ -674,8 +676,44 @@
   <section id="goshugi">
     <h2>ご祝儀について</h2>
     <div class="waku">
-      ご祝儀は当日ご持参いただくか <br>事前のお振込みも可能です<br>
-      <strong>事前振込をご希望の方は <br>別途ご案内する口座情報を<br>ご利用ください</strong>
+      <p>お心遣いをいただける場合は<br>皆様のご都合に合わせて<br>以下の方法から<br>お選びいただけますと幸いです：
+      <div class="payment-sect">
+        <ul>
+          <li>
+            <div class="payment-option">
+              当日現金にて
+            </div>
+          </li>
+
+          <li>
+            <div class="payment-option clickable" onclick="toggleDetails('bank-details')">
+              事前のお振込み
+            </div>
+            <div class="payment-details" id="bank-details">
+              <div class="bank-details">
+                <b>お振込先：</b><br>
+                住信SBI銀行(0038)<br>ミカン支店(103)<br>
+                普通 4620413<br>
+                シゲト カズキ
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="payment-option clickable" onclick="toggleDetails('paypay-details')">
+              PayPay
+            </div>
+            <div class="payment-details" id="paypay-details">
+              <div class="bank-details">
+                <p style="color: #e84a5f; margin: 0;">※PayPayマネーのみ対応しております</p>
+                <b>PayPay ID:</b><br>
+                ×××××××××××××
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <p>どうぞご無理のない範囲で<br>お願いいたします</p>
     </div>
   </section>
 
@@ -739,7 +777,7 @@
 
   <footer>
     <p>Web制作：立木 ｜ イラスト：立木母</p>
-    <p>前撮り写真：ハリー</p>
+    <p>写真撮影：ハリー</p>
   </footer>
   </div>
 
