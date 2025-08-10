@@ -534,13 +534,13 @@ footer {
   .floating-image.right-top {
     right: 10px;
     top: 0;
-    width: 100px;
+    width: 140px;
   }
 
   .floating-image.left-bottom {
     left: 10px;
-    bottom: 10px;
-    width: 70px;
+    bottom: 0px;
+    width: 60px;
   }
 
   /* .cloud-content {
@@ -1021,24 +1021,41 @@ input[name="tab_menu"] {
 
 .bus-group {
   margin: 16px 0;
+  overflow: hidden;
 }
 
-.bus .bus2 {
+.bus-container,
+.bus2-container {
   width: 100vw;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
 }
 
-.bus img {
-  animation: moveLeft 15s linear infinite;
+.bus-line {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.bus-line.left {
+  margin-top: 12px;
+}
+
+.bus-line img {
+  display: inline-block;
+  vertical-align: top;
   margin-right: 40px;
+}
+
+.bus-line.left img {
+  animation: moveLeft 20s linear infinite;
   animation-delay: 3s;
 }
 
-.bus2 img {
-  animation: moveRight 15s linear infinite;
-  margin-right: 40px;
-  animation-delay: 6s;
+.bus-line.right img {
+  animation: moveRight 20s linear infinite;
+  animation-delay: 8s;
 }
 
 @keyframes moveLeft {
