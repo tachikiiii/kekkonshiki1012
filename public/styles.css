@@ -800,7 +800,7 @@ footer {
   display: block;
 }
 
-#tab_a_content .community-description {
+.community-description {
   color: #fff;
   font-size: 16px;
   margin: 0;
