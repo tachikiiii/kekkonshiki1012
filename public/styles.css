@@ -812,7 +812,7 @@ footer {
   .community-description {
     margin: 0 0 16px 0;
   }
-  
+
   .community-description p {
     font-size: 14px;
   }
@@ -1235,8 +1235,8 @@ h3 {
 }
 
 .payment-sect {
-    max-width: 200px;
-    margin: 0 auto;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 .payment-container {
@@ -1254,12 +1254,22 @@ h3 {
 }
 
 .payment-details {
-  padding: 0; /* 最初はpaddingも0に */
-  background-color: transparent; /* または背景色を透明に */
+  padding: 0;
+  /* 最初はpaddingも0に */
+  background-color: transparent;
+  /* または背景色を透明に */
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
   font-size: 14px;
+
+  & a,
+  a:visited,
+  a:hover,
+  a:active {
+    font-weight: bold;
+    color: #8A9A5B;
+  }
 }
 
 .payment-details.show {
@@ -1745,16 +1755,21 @@ dl>div.appear dd {
   }
 
   .tabs {
-    gap: 6px; /* ボタン間の余白を狭く */
+    gap: 6px;
+    /* ボタン間の余白を狭く */
     flex-wrap: wrap;
   }
 
   .tab,
   .tab.blue {
-    min-width: auto;      /* 幅固定を解除 */
-    padding: 6px 10px;    /* パディング縮小 */
-    font-size: 0.85rem;   /* フォントも小さく */
-    flex: 1 1 calc(33.33% - 12px); /* 3列並びを意識 */
+    min-width: auto;
+    /* 幅固定を解除 */
+    padding: 6px 10px;
+    /* パディング縮小 */
+    font-size: 0.85rem;
+    /* フォントも小さく */
+    flex: 1 1 calc(33.33% - 12px);
+    /* 3列並びを意識 */
     text-align: center;
     box-sizing: border-box;
   }
