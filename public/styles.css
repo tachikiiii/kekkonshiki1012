@@ -1744,6 +1744,21 @@ dl>div.appear dd {
     margin: 30px auto 30px auto;
   }
 
+  .tabs {
+    gap: 6px; /* ボタン間の余白を狭く */
+    flex-wrap: wrap;
+  }
+
+  .tab,
+  .tab.blue {
+    min-width: auto;      /* 幅固定を解除 */
+    padding: 6px 10px;    /* パディング縮小 */
+    font-size: 0.85rem;   /* フォントも小さく */
+    flex: 1 1 calc(33.33% - 12px); /* 3列並びを意識 */
+    text-align: center;
+    box-sizing: border-box;
+  }
+
   section {
     padding: 30px 20px;
     text-align: center;
