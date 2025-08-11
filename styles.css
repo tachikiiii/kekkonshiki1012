@@ -133,7 +133,7 @@ section {
 
 footer {
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px 80px;
   font-size: 14px;
   color: #fff;
   background: #545454;
@@ -228,6 +228,50 @@ footer {
 
 .hamburger.open span:nth-child(3) {
   transform: translateY(-12px) rotate(-45deg);
+}
+
+/* 出欠ボタン */
+/* 出欠ボタン */
+.rsvp {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  cursor: pointer;
+  background: #87ceeb;
+  color: white;
+  border: 4px solid #fff;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rsvp:active {
+  /* クリック時の効果 */
+  transform: translateX(-50%) translateY(0px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+#rsvp p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 480px) {
+  .rsvp {
+    padding: 14px 24px;
+    font-size: 14px;
+    bottom: 20px;
+    white-space: nowrap;
+  }
 }
 
 
@@ -755,6 +799,24 @@ footer {
 
 .communities .community.active {
   display: block;
+}
+
+#tab_a_content .community-description {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .community-description {
+    margin: 0 0 16px 0;
+  }
+  
+  .community-description p {
+    font-size: 14px;
+  }
 }
 
 .scroll-wrapper {
