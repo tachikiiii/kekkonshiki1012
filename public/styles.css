@@ -1230,7 +1230,7 @@ h3 {
 
   & p {
     margin: 16px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -1255,16 +1255,18 @@ h3 {
 
 .payment-details {
   padding: 0;
-  /* 最初はpaddingも0に */
   background-color: transparent;
-  /* または背景色を透明に */
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
   font-size: 14px;
 
-  & a,
-  a:visited,
+  a,
+  a:visited {
+    font-weight: bold;
+    color: #8A9A5B;
+  }
+
   a:hover,
   a:active {
     font-weight: bold;
@@ -1272,8 +1274,18 @@ h3 {
   }
 }
 
+.payment-details p {
+    color: #e84a5f;
+    margin: 0;
+}
+
+.payment-details img {
+  max-width: 100%;
+}
+
+
 .payment-details.show {
-  max-height: 200px;
+  max-height: 400px;
   background: #ddd;
   font-size: 14px;
   padding: 8px;
