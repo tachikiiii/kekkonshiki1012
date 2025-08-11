@@ -237,7 +237,7 @@ footer {
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 980;
   cursor: pointer;
   background: #87ceeb;
   color: white;
@@ -316,7 +316,6 @@ footer {
   padding-left: 160px;
   clip-path: ellipse(70% 70% at 100% 50%);
   z-index: 990;
-
 }
 
 /* ---- 写真 ---- */
@@ -325,7 +324,7 @@ footer {
   top: 70px;
   /* ハンバーガーの下に調整したいならここを変更 */
   right: 15px;
-  z-index: 998;
+  z-index: 50;
   width: 44.8px;
   /* 小さめ：24～32pxくらいが一般的 */
   height: 35.8px;

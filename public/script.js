@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.getElementById('sidebar');
   let isOpen = false;
 
+  // メニューを閉じる関数
+  function closeSidebar() {
+    if (isOpen && navMenu && hamburger) {
+      navMenu.style.display = 'none';
+      hamburger.classList.remove('open');
+      isOpen = false;
+    }
+  }
+
   // ハンバーガークリックでメニュー開閉・アニメーション
   hamburger?.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -30,26 +39,30 @@ document.addEventListener("DOMContentLoaded", () => {
     navMenu.style.display = isOpen ? 'flex' : 'none';
   });
 
-  // 画面どこかクリックでメニュー閉じ
-  window.addEventListener('click', (e) => {
+  // サイドバーのメニュー項目をクリックした時にメニューを閉じる
+  const menuLinks = navMenu?.querySelectorAll('a');
+  menuLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      closeSidebar();
+    });
+  });
+
+  // 画面どこかクリックでメニュー閉じ（サイドバーの外をクリックした場合）
+  document.addEventListener('click', (e) => {
     if (
       isOpen &&
       navMenu &&
       !navMenu.contains(e.target) &&
       !hamburger.contains(e.target)
     ) {
-      navMenu.style.display = 'none';
-      hamburger.classList.remove('open');
-      isOpen = false;
+      closeSidebar();
     }
   });
 
   // ESCキーでメニュー閉じ
   window.addEventListener('keydown', (e) => {
     if (e.key === "Escape" && isOpen) {
-      navMenu.style.display = 'none';
-      hamburger.classList.remove('open');
-      isOpen = false;
+      closeSidebar();
     }
   });
 
