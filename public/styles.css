@@ -599,6 +599,10 @@ footer {
   color: #fff;
 }
 
+.intro-text h2 {
+  margin-bottom: 32px;
+}
+
 .main-message {
   margin-top: 16px;
   color: #fff;
