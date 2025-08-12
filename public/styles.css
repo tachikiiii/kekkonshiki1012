@@ -1115,7 +1115,7 @@ input[name="tab_menu"] {
 
 .bus-line.left img {
   animation: moveLeft 20s linear infinite;
-  animation-delay: 3s;
+  animation-delay: 5s;
   animation-fill-mode: backwards;
 }
 
