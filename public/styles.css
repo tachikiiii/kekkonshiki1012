@@ -1116,11 +1116,13 @@ input[name="tab_menu"] {
 .bus-line.left img {
   animation: moveLeft 20s linear infinite;
   animation-delay: 3s;
+  animation-fill-mode: backwards;
 }
 
 .bus-line.right img {
   animation: moveRight 20s linear infinite;
   animation-delay: 8s;
+  animation-fill-mode: backwards;
 }
 
 @keyframes moveLeft {
